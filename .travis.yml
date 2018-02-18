@@ -11,5 +11,4 @@ env:
     - CWEB_VERSION=cweb-3.43
     - CWEB_VERSION=cweb-3.64c
   global:
-    - ENV=
     - Build_Deps_Default_Paths=1
