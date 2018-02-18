@@ -1,7 +1,7 @@
-#export CWEB_VERSION=cweb-3.64c
-export CWEB_VERSION=cweb-3.43
-# Last version at this time
-# cweb-3.64c
+#!/bin/sh
+
+# Last version at this time cweb-3.64c
+#test -n "$CWEB_VERSION" || export CWEB_VERSION=cweb-3.64c
 
 #export sudo='sudo '
 
@@ -46,12 +46,3 @@ echo PREFIX=$PREFIX
 echo "install-dependencies: '$*'"
 test -d $SRC_PREFIX || ${pref} mkdir -vp $SRC_PREFIX
 test -d $PREFIX || ${pref} mkdir -vp $PREFIX/bin
-
-
-test -z "$CWEB_VERSION" || {
-  for bin in cweave ctangle
-  do
-    rm $PREFIX/bin/$bin || true
-    ln -s $PREFIX/bin/$bin-$CWEB_VERSION $PREFIX/bin/$bin
-  done
-}

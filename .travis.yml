@@ -1,7 +1,15 @@
-before_install:
-- . ./profile.sh
 install:
+- . ./profile.sh
 - ./install-dependencies.sh
 script:
+- . ./profile.sh
 - make doc build
 - adventure
+
+env:
+  matrix:
+    - CWEB_VERSION=cweb-3.43
+    - CWEB_VERSION=cweb-3.64c
+  global:
+    - ENV=
+    - PATH=$HOME/.local/bin:$PATH

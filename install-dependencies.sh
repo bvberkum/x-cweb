@@ -35,7 +35,17 @@ main_entry()
   main_load
 
   case "$1" in all|cweb )
+
+      for bin in cweave ctangle
+      do
+        rm $PREFIX/bin/$bin || true
+        test -z "$CWEB_VERSION" || {
+          ln -s $PREFIX/bin/$bin-$CWEB_VERSION $PREFIX/bin/$bin
+        }
+      done
+
       install_cweb
+
     ;; esac
 
   stderr "OK. All pre-requisites for '$1' checked"

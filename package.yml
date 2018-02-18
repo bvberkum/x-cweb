@@ -8,7 +8,7 @@
     init:
       - ./install-dependencies.sh
     deinit:
-      - rm $PREFIX/bin/cweave $PREFIX/bin/ctangle
+      - git clean -df
     build:
       - make -k build
     doc:
