@@ -1,4 +1,5 @@
 install:
 - Build_Deps_Default_Paths=1 sudo='sudo ' ./install-dependencies.sh
 script:
+- make doc build
 - adventure
