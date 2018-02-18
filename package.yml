@@ -2,7 +2,7 @@
   main: x-cweb
   id: x-cweb
 
-  env: . ./profile.sh
+  env: Build_Deps_Default_Paths=1 . ./profile.sh
 
   scripts:
     init:

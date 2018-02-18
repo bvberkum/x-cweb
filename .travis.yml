@@ -1,6 +1,6 @@
 install:
 - . ./profile.sh
-- ./install-dependencies.sh
+- . ./install-dependencies.sh
 script:
 - . ./profile.sh
 - make doc build
@@ -13,3 +13,4 @@ env:
   global:
     - ENV=
     - PATH=$HOME/.local/bin:$PATH
+    - Build_Deps_Default_Paths=1

@@ -2,7 +2,7 @@
 
 set -e
 
-type stderr >/dev/null 2>&1 || . ./profile.sh
+type cweb_stderr >/dev/null 2>&1 || . ./profile.sh
 
 
 install_cweb()
@@ -18,11 +18,11 @@ install_cweb()
       make
       ${sudo}cp ctangle $PREFIX/bin/ctangle-$CWEB_VERSION
       ${sudo}cp cweave $PREFIX/bin/cweave-$CWEB_VERSION
-      stderr "Installed cweb $CWEB_VERSION binaries to $PREFIX/bin"
+      cweb_stderr "Installed cweb $CWEB_VERSION binaries to $PREFIX/bin"
     } || {
       make
       ${sudo}cp ctangle cweave $PREFIX/bin/
-      stderr "Installed cweb binaries to $PREFIX/bin"
+      cweb_stderr "Installed cweb binaries to $PREFIX/bin"
     }
     git clean -df
   )
@@ -48,21 +48,21 @@ main_entry()
 
     ;; esac
 
-  stderr "OK. All pre-requisites for '$1' checked"
+  cweb_stderr "OK. All pre-requisites for '$1' checked"
 }
 
 main_load()
 {
   #test -x "$(which tput)" && ...
   log_pref="[install-dependencies] "
-  stderr "Loaded"
+  cweb_stderr "Loaded"
 }
 
 
 {
   test "$(basename "$0")" = "install-dependencies.sh" ||
   test "$(basename "$0")" = "bash" ||
-    stderr "0: '$0' *: $*" 1
+    cweb_stderr "0: '$0' *: $*" 1
 } && {
   test -n "$1" -o "$1" = "-" || set -- all
   while test -n "$1"
