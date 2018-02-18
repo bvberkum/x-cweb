@@ -3,7 +3,7 @@ install:
 - . ./install-dependencies.sh
 script:
 - . ./profile.sh
-- make doc build
+- PATH=$PATH:$HOME/.local/bin make doc build
 - adventure
 
 env:
@@ -12,5 +12,4 @@ env:
     - CWEB_VERSION=cweb-3.64c
   global:
     - ENV=
-    - PATH=$HOME/.local/bin:$PATH
     - Build_Deps_Default_Paths=1
