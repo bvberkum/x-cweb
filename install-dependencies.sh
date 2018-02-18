@@ -55,6 +55,7 @@ install_cweb()
   }
   (
     cd $SRC_PREFIX/github.com/ascherer/cweb
+    ${sudo}mkdir -p $PREFIX/bin
     test -n "$CWEB_VERSION" && {
       git checkout $CWEB_VERSION
       make
