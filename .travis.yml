@@ -1,6 +1,7 @@
 install:
 - . ./profile.sh
-- . ./install-dependencies.sh
+- ./install-dependencies.sh
+
 script:
 - . ./profile.sh
 - PATH=$PATH:$HOME/.local/bin make doc build
