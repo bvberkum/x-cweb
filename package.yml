@@ -1,0 +1,17 @@
+- type: application/vnd.org.wtwta.project
+  main: x-cweb
+  id: x-cweb
+
+  env: . ./profile.sh
+
+  scripts:
+    init:
+      - ./install-dependencies.sh
+    deinit:
+      - rm $PREFIX/bin/cweave $PREFIX/bin/ctangle
+    build:
+      - make -k build
+    doc:
+      - make -k doc
+    test:
+      - make test
